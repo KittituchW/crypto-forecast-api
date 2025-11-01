@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "amla_at3_25544646_fastapi"
+version = "0.1.0"
+description = "AT3 FastAPI service for next-day HIGH prediction (t+2 horizon)"
+authors = ["Kittituch Wongwatcharapaiboon"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "3.11.4"
+pandas = "2.2.2"
+scikit-learn = "1.5.1"
+joblib = "1.4.2"
+xgboost = "2.1.0"
+lightgbm = "4.4.0"
+hyperopt = "0.2.7"
+lime = "0.2.0.1"
+wandb = "0.17.4"
+fastapi = "0.111.0"
+uvicorn = "0.30.1"
+jupyterlab = "4.2.3"
+requests = "2.32.3"
+streamlit = "1.36.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
