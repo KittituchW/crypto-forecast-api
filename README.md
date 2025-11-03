@@ -1,30 +1,27 @@
-# 🪙 AMLA_AT3_25544646_FastAPI
+# AMLA_AT3_25544646_FastAPI
 
 FastAPI microservice for **next-day cryptocurrency HIGH price prediction (t+2 horizon)**, developed as part of the **Advanced Machine Learning Application (AT3)** project at the University of Technology Sydney.
 
-The API is hosted on **Render** with automated build and deployment from GitHub.
-Render manages dependency installation, environment setup, and HTTPS access.
+The API is hosted on **Render** with automated build and deployment from GitHub. Render manages dependency installation, environment setup, and HTTPS access.
 
-🔗 **Live API:** [https://amla-at3-fastapi-latest.onrender.com](https://amla-at3-fastapi-latest.onrender.com)
-
+**Live API:** [https://amla-at3-fastapi-latest.onrender.com](https://amla-at3-fastapi-latest.onrender.com)
 
 This API provides real-time price prediction by fetching live data from the **Kraken OHLC API**, processing it into model-ready features, and returning the forecasted next-day HIGH price.
 
 ---
 
-## 🚀 Overview
+## Overview
 
-The API predicts **tomorrow’s HIGH price** for a cryptocurrency using **yesterday’s features**.  
-It combines live data retrieval, feature engineering, and machine learning inference into a single, deployable service.
+The API predicts **tomorrow’s HIGH price** for a cryptocurrency using **yesterday’s features**. It combines live data retrieval, feature engineering, and machine learning inference into a single, deployable service.
 
 **Key features:**
-- Fetches up-to-date OHLC data from Kraken API  
-- Generates technical indicators and cyclical time features  
-- Loads a trained Lasso Regression model and scaler  
-- Returns next-day HIGH predictions as JSON  
+
+* Fetches up-to-date OHLC data from Kraken API
+* Generates technical indicators and cyclical time features
+* Loads a trained Lasso Regression model and scaler
+* Returns next-day HIGH predictions as JSON
 
 ---
-
 
 ## Project Structure
 
@@ -49,7 +46,7 @@ AMLA_AT3_25544646_FastAPI/
 └── .gitignore
 ```
 
-## ⚙️ Installation
+## Installation
 
 1. **Clone the repository**
 
@@ -59,6 +56,7 @@ AMLA_AT3_25544646_FastAPI/
    ```
 
 2. **Install dependencies**
+
    Using **Poetry**:
 
    ```bash
@@ -78,11 +76,11 @@ AMLA_AT3_25544646_FastAPI/
    ```
 
    The API will start at:
-   👉 `http://127.0.0.1:8000`
+   `http://127.0.0.1:8000`
 
 ---
 
-## 🧠 API Endpoints
+## API Endpoints
 
 | Endpoint          | Method | Description                                                     |
 | ----------------- | ------ | --------------------------------------------------------------- |
@@ -104,9 +102,23 @@ GET /predict/ETHUSD/
 }
 ```
 
+### Health Check
+
+You can check the service status using:
+
+```bash
+GET /health/
+```
+
+**Response:**
+
+```
+OK
+```
+
 ---
 
-## 📦 Model Details
+## Model Details
 
 * **Model:** Lasso Regression
 * **Framework:** scikit-learn
@@ -128,7 +140,7 @@ GET /predict/ETHUSD/
 
 ---
 
-## 🐳 Docker Deployment
+## Docker Deployment
 
 **Build image:**
 
@@ -143,29 +155,13 @@ docker run -p 8000:8000 amla-fastapi
 ```
 
 Access locally at:
-👉 `http://localhost:8000`
+`http://localhost:8000`
 
 ---
 
-## 🧪 Health Check
-
-Check if the service is running:
-
-```bash
-GET /health/
-```
-
-**Response:**
-
-```
-OK
-```
-
----
-
-## 👨‍💻 Author
+## Author
 
 **Kittituch Wongwatcharapaiboon**
 Student ID: 25544646
 University of Technology Sydney (UTS)
-📘 Subject: 36120 Advanced Machine Learning Application (AT3)
+Subject: 36120 Advanced Machine Learning Application (AT3)
